@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 				}	
 			},
 			
-			ticketapp: {
+			app: {
 				files: {
 					'./src/assets/spa/templates/compiled.js': './src/assets/spa/templates/*.hbs'
 				}
