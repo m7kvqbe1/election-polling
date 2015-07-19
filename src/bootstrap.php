@@ -28,9 +28,6 @@ $app = new Application();
 // Set character encoding
 $app['charset'] = 'UTF-8';
 
-// Set application environment
-$app['env'] = $_ENV['env'] ?: 'dev';
-
 if(DEBUG) {
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);

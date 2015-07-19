@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 			
 			ticketapp: {
 				files: {
-					'./src/assets/js/app/templates/compiled.js': './src/assets/js/app/templates/*.hbs'
+					'./src/assets/spa/templates/compiled.js': './src/assets/spa/templates/*.hbs'
 				}
 			}
 		},
@@ -27,12 +27,12 @@ module.exports = function(grunt) {
 
 			app: {
 				src: [
-					'./src/assets/js/app/templates/compiled.js',
-					'./src/assets/js/app/handlebarshelpers.js',
-					'./src/assets/js/app/models/*.js',
-					'./src/assets/js/app/collections/*.js',
-					'./src/assets/js/app/views/*.js',
-					'./src/assets/js/app/app.js'
+					'./src/assets/spa/templates/compiled.js',
+					'./src/assets/spa/handlebarshelpers.js',
+					'./src/assets/spa/models/*.js',
+					'./src/assets/spa/collections/*.js',
+					'./src/assets/spa/views/*.js',
+					'./src/assets/spa/app.js'
 				],
 
 				dest: './public/js/app.js'
@@ -49,10 +49,10 @@ module.exports = function(grunt) {
 			
 			lib: {
 				src: [
-					'./src/assets/js/lib/jquery-1.11.3.js',
-					'./src/assets/js/lib/underscore-min.js',
-					'./src/assets/js/lib/backbone-min.js',
-					'./src/assets/js/lib/handlebars.runtime-v3.0.3.js'
+					'./src/assets/spa/lib/jquery-1.11.3.js',
+					'./src/assets/spa/lib/underscore.js',
+					'./src/assets/spa/lib/backbone.js',
+					'./src/assets/spa/lib/handlebars.runtime-v3.0.3.js'
 				],
 
 				dest: './public/js/lib.min.js'
@@ -68,10 +68,9 @@ module.exports = function(grunt) {
 		watch: {			
 			js: {
 				files: [
-					'./src/assets/js/app/**/*.js', 
-					'./src/assets/js/app/**/**/*.js', 
-					'./src/assets/js/app/**/**/**/*.js', 
-					'./src/assets/js/app/**/js/templates/*.hbs'
+					'./src/assets/spa/**/*.js', 
+					'./src/assets/spa/*.js', 
+					'./src/assets/spa/templates/*.hbs'
 				],
 				
 				tasks: ['handlebars', 'concat', 'uglify']
