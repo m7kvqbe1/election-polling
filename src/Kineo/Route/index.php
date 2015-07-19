@@ -6,4 +6,5 @@ $app['index.controller'] = $app->share(function() use ($app) {
 	return new IndexController($app);
 });
 
-$app->get('/', 'index.controller:indexAction');
+// Serve assets to all routes that aren't prefixed with /api
+$app->get('/{uri}', 'index.controller:indexAction')->assert('uri', '^((?!api).)*$');
