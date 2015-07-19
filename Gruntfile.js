@@ -2,6 +2,18 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded'
+				},
+				
+				files: {
+					'./public/css/styles.css': './src/assets/sass/styles.scss'
+				}	
+			},
+		},
+		
 		handlebars: {
 			options: {
 				namespace: 'JST',
@@ -79,11 +91,12 @@ module.exports = function(grunt) {
 	});
 
 	// Load the plugins that prvide the various Grunt tasks
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s).
-	grunt.registerTask('default', ['handlebars', 'concat', 'uglify']);
+	grunt.registerTask('default', ['sass', 'handlebars', 'concat', 'uglify']);
 }

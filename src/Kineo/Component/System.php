@@ -22,6 +22,6 @@ class System
 				break;
 		}
 		
-		return file_get_contents(DOCUMENT_ROOT.'/src/assets/app/index'.$env.'.html');
+		return file_get_contents(DOCUMENT_ROOT.'/src/assets/spa/index'.$env.'.html');
 	}
 }
