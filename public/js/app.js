@@ -1,123 +1,147 @@
 this["JST"] = this["JST"] || {};
 
 this["JST"]["ResultsList"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<ol class=\"breadcrumb\">\n	<li><a href=\"#\">Home</a></li>\n	<li class=\"active\">Results</li>\n</ol>\n\n<div class=\"welcome\">\n	<h1>Results View</h1>\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n</div>";
+    return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#results\">Results</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">\n	<h1>Results View</h1>\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n</div>";
 },"useData":true});
 
 this["JST"]["VoteForm"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<ol class=\"breadcrumb\">\n	<li><a href=\"#\">Home</a></li>\n	<li class=\"active\">Vote</li>\n</ol>\n\n<div class=\"welcome\">\n	<h1>Vote View</h1>\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n</div>";
+    return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#vote\">Vote</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">\n	<h1>Vote View</h1>\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n</div>";
 },"useData":true});
 
 this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<ol class=\"breadcrumb\">\n	<li><a href=\"#\">Home</a></li>\n	<li class=\"active\">Welcome</li>\n</ol>\n\n<div class=\"welcome\">\n	<h1>Welcome to the Kineo Technical Task!</h1>\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n</div>";
-},"useData":true});;;var IndexView = Backbone.View.extend({
-	template: JST.Welcome,
-	
-	initialize: function() {		
-		console.log(this.$el);
-	},
-	
-	render: function() {
-		//this.$el.html(this.template());
-		$('#app').html(this.template());
-		
-		this.delegateEvents({
-			'click document': 'testEvent'
-		});
-		
-		return this;
-	},
-	
-	testEvent: function() {
-		alert('Hello, World!');
-	}
-});;var ResultsView = Backbone.View.extend({
-	template: JST.ResultsList,
-	
-	initialize: function() {
-		console.log('foo');
-	},
-	
-	render: function() {
-		//this.$el.html(this.template);
-		$('#app').html(this.template());
-		
-		this.delegateEvents({
-			'click document': 'testEvent'
-		});
-		
-		return this;
-	},
-	
-	testEvent: function() {
-		alert('Hello, World!');
-	}
-});;var VoteView = Backbone.View.extend({
-	template: JST.VoteForm,
-	
-	initialize: function() {
-		console.log('foo');
-	},
-	
-	render: function() {
-		//this.$el.html(this.template);
-		$('#app').html(this.template());
-		
-		this.delegateEvents({
-			'click .navbar-brand': 'testEvent'
-		});
-		
-		return this;
-	},
-	
-	testEvent: function() {
-		alert('Hello, World!');
-	}
-});;var AppRouter = Backbone.Router.extend({
-	root: '/',
-	
-	appElement: $('#app'),
-	
-	routes: {
-		"": "index",
-		"vote": "vote",
-		"results/{constituency}": "results",
-		"*notFound": "index"
-	},
-	
-	currentView: false,
-	showView: function(view) {
-		if(this.currentView) this.currentView.close();
-		this.currentView = view;
-		this.appElement.html(this.currentView.render().el);
-	},
-	
-	index: function() {
-		var indexView = new IndexView();
-		
-		this.showView(indexView);
-	},
+    return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"#\">Home</a></li>\n	<li class=\"active\">Welcome</li>\n</ol>\n\n<div class=\"welcome\">\n	<h1>Welcome to the Kineo Technical Task!</h1>\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n</div>";
+},"useData":true});;;var app = app || {};
 
-	vote: function() {
-		var voteView = new VoteView();	
-
-		this.showView(voteView);
-	},
+(function($) {
+	'use strict';
 	
-	results: function(constituency) {
-		var resultsView = new ResultsView();
+	app.IndexView = Backbone.View.extend({
+		el: '#app',
 		
-		this.showView(resultsView);
-	}
-});
+		template: JST.Welcome,
+		
+		initialize: function() {		
+			console.log('initializing');			
+			
+			this.render();
+		},
+		
+		events: {
+			'click .navbar-brand': 'testEventHandler'
+		},
+		
+		render: function() {			
+			this.$el.html(this.template);
+			
+			return this;
+		},
+		
+		testEventHandler: function() {
+			alert('Hello, World!');
+		}
+	});
+})(jQuery);;var app = app || {};
 
-var app = new AppRouter();
+(function($) {
+	'use strict';
+	
+	app.ResultsView = Backbone.View.extend({
+		el: '#app',
+		
+		template: JST.ResultsList,
+		
+		initialize: function() {		
+			console.log('initializing');
+			
+			this.render();
+		},
+		
+		events: {
+			'click .navbar-brand': 'testEventHandler'
+		},
+		
+		render: function() {
+			this.$el.html(this.template());
+			
+			return this;
+		},
+		
+		testEventHandler: function() {
+			alert('Hello, World!');
+		}
+	});
+})(jQuery);;var app = app || {};
+
+(function($) {
+	'use strict';
+	
+	app.VoteView = Backbone.View.extend({
+		el: '#app',
+		
+		template: JST.VoteForm,
+		
+		initialize: function() {		
+			console.log('initializing');
+			
+			this.render();
+		},
+		
+		events: {
+			'click .navbar-brand': 'testEventHandler'
+		},
+		
+		render: function() {
+			this.$el.html(this.template());
+			
+			return this;
+		},
+		
+		testEventHandler: function() {
+			alert('Hello, World!');
+		}
+	});
+})(jQuery);;var app = app || {};
 
 $(function() {
-	Backbone.history.start({ 
-		pushState: true, 
-		root: app.root 
+	'use strict';
+	
+	var Router = Backbone.Router.extend({
+		root: '/',
+		
+		routes: {
+			"": "indexView",
+			"vote": "voteView",
+			"results": "resultsView",
+			"*notFound": "indexView"
+		},
+
+		indexView: function() {
+			console.log('IndexView');
+			
+			new app.IndexView();
+		},
+		
+		resultsView: function() {
+			console.log('ResultsView');
+			
+			new app.ResultsView();
+		},
+		
+		voteView: function() {
+			console.log('VoteView');
+			
+			new app.VoteView();
+		}
 	});
+	
+	app.Router = new Router();
+	
+	Backbone.history.start();
+	
+	/*Backbone.history.start({
+		pushState: true, 
+		root: '/'
+	});*/
 });
 
 // Bypass router for anchors with data-bypass="true" data attribute

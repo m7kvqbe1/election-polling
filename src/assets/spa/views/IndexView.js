@@ -1,22 +1,31 @@
-var IndexView = Backbone.View.extend({
-	template: JST.Welcome,
+var app = app || {};
+
+(function($) {
+	'use strict';
 	
-	initialize: function() {		
-		console.log(this.$el);
-	},
-	
-	render: function() {
-		//this.$el.html(this.template());
-		$('#app').html(this.template());
+	app.IndexView = Backbone.View.extend({
+		el: '#app',
 		
-		this.delegateEvents({
-			'click document': 'testEvent'
-		});
+		template: JST.Welcome,
 		
-		return this;
-	},
-	
-	testEvent: function() {
-		alert('Hello, World!');
-	}
-});
+		initialize: function() {		
+			console.log('initializing');			
+			
+			this.render();
+		},
+		
+		events: {
+			'click .navbar-brand': 'testEventHandler'
+		},
+		
+		render: function() {			
+			this.$el.html(this.template);
+			
+			return this;
+		},
+		
+		testEventHandler: function() {
+			alert('Hello, World!');
+		}
+	});
+})(jQuery);

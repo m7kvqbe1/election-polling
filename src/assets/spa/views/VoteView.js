@@ -1,22 +1,31 @@
-var VoteView = Backbone.View.extend({
-	template: JST.VoteForm,
+var app = app || {};
+
+(function($) {
+	'use strict';
 	
-	initialize: function() {
-		console.log('foo');
-	},
-	
-	render: function() {
-		//this.$el.html(this.template);
-		$('#app').html(this.template());
+	app.VoteView = Backbone.View.extend({
+		el: '#app',
 		
-		this.delegateEvents({
-			'click .navbar-brand': 'testEvent'
-		});
+		template: JST.VoteForm,
 		
-		return this;
-	},
-	
-	testEvent: function() {
-		alert('Hello, World!');
-	}
-});
+		initialize: function() {		
+			console.log('initializing');
+			
+			this.render();
+		},
+		
+		events: {
+			'click .navbar-brand': 'testEventHandler'
+		},
+		
+		render: function() {
+			this.$el.html(this.template());
+			
+			return this;
+		},
+		
+		testEventHandler: function() {
+			alert('Hello, World!');
+		}
+	});
+})(jQuery);

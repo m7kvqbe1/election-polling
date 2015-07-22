@@ -1,48 +1,39 @@
-var AppRouter = Backbone.Router.extend({
-	root: '/',
-	
-	appElement: $('#app'),
-	
-	routes: {
-		"": "index",
-		"vote": "vote",
-		"results/{constituency}": "results",
-		"*notFound": "index"
-	},
-	
-	currentView: false,
-	showView: function(view) {
-		if(this.currentView) this.currentView.close();
-		this.currentView = view;
-		this.appElement.html(this.currentView.render().el);
-	},
-	
-	index: function() {
-		var indexView = new IndexView();
-		
-		this.showView(indexView);
-	},
-
-	vote: function() {
-		var voteView = new VoteView();	
-
-		this.showView(voteView);
-	},
-	
-	results: function(constituency) {
-		var resultsView = new ResultsView();
-		
-		this.showView(resultsView);
-	}
-});
-
-var app = new AppRouter();
+var app = app || {};
 
 $(function() {
-	Backbone.history.start({ 
-		pushState: true, 
-		root: app.root 
+	'use strict';
+	
+	var Router = Backbone.Router.extend({
+		root: '/',
+		
+		routes: {
+			"": "indexView",
+			"vote": "voteView",
+			"results": "resultsView",
+			"*notFound": "indexView"
+		},
+
+		indexView: function() {			
+			new app.IndexView();
+		},
+		
+		resultsView: function() {			
+			new app.ResultsView();
+		},
+		
+		voteView: function() {			
+			new app.VoteView();
+		}
 	});
+	
+	app.Router = new Router();
+	
+	Backbone.history.start();
+	
+	/*Backbone.history.start({
+		pushState: true, 
+		root: app.Router.root
+	});*/
 });
 
 // Bypass router for anchors with data-bypass="true" data attribute

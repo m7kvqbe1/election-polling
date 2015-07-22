@@ -1,22 +1,31 @@
-var ResultsView = Backbone.View.extend({
-	template: JST.ResultsList,
+var app = app || {};
+
+(function($) {
+	'use strict';
 	
-	initialize: function() {
-		console.log('foo');
-	},
-	
-	render: function() {
-		//this.$el.html(this.template);
-		$('#app').html(this.template());
+	app.ResultsView = Backbone.View.extend({
+		el: '#app',
 		
-		this.delegateEvents({
-			'click document': 'testEvent'
-		});
+		template: JST.ResultsList,
 		
-		return this;
-	},
-	
-	testEvent: function() {
-		alert('Hello, World!');
-	}
-});
+		initialize: function() {		
+			console.log('initializing');
+			
+			this.render();
+		},
+		
+		events: {
+			'click .navbar-brand': 'testEventHandler'
+		},
+		
+		render: function() {
+			this.$el.html(this.template());
+			
+			return this;
+		},
+		
+		testEventHandler: function() {
+			alert('Hello, World!');
+		}
+	});
+})(jQuery);
