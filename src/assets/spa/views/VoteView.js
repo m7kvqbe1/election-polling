@@ -9,23 +9,23 @@ var app = app || {};
 		template: JST.VoteForm,
 		
 		initialize: function() {		
-			console.log('initializing');
-			
 			this.render();
-		},
-		
-		events: {
-			'click .navbar-brand': 'testEventHandler'
 		},
 		
 		render: function() {
 			this.$el.html(this.template());
 			
+			InterfaceHelpers.setMenuItemActive('vote');
+			
+			this.delegateEvents({
+				'change input[type=radio]': 'displayVoteSelectToggle'
+			});
+			
 			return this;
 		},
 		
-		testEventHandler: function() {
-			alert('Hello, World!');
+		displayVoteSelectToggle: function() {
+			$('.question_2').toggleClass('hidden');
 		}
 	});
 })(jQuery);

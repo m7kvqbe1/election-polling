@@ -9,23 +9,15 @@ var app = app || {};
 		template: JST.ResultsList,
 		
 		initialize: function() {		
-			console.log('initializing');
-			
 			this.render();
-		},
-		
-		events: {
-			'click .navbar-brand': 'testEventHandler'
 		},
 		
 		render: function() {
 			this.$el.html(this.template());
 			
+			InterfaceHelpers.setMenuItemActive('results');
+			
 			return this;
-		},
-		
-		testEventHandler: function() {
-			alert('Hello, World!');
 		}
 	});
 })(jQuery);

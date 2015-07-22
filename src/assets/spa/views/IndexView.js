@@ -8,24 +8,16 @@ var app = app || {};
 		
 		template: JST.Welcome,
 		
-		initialize: function() {		
-			console.log('initializing');			
-			
+		initialize: function() {					
 			this.render();
-		},
-		
-		events: {
-			'click .navbar-brand': 'testEventHandler'
 		},
 		
 		render: function() {			
 			this.$el.html(this.template);
 			
+			InterfaceHelpers.setMenuItemActive('home');
+			
 			return this;
-		},
-		
-		testEventHandler: function() {
-			alert('Hello, World!');
 		}
 	});
 })(jQuery);

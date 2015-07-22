@@ -40,9 +40,9 @@ module.exports = function(grunt) {
 			app: {
 				src: [
 					'./src/assets/spa/templates/compiled.js',
-					'./src/assets/spa/handlebarshelpers.js',
-					'./src/assets/spa/models/*.js',
+					'./src/assets/spa/helpers/*.js',
 					'./src/assets/spa/collections/*.js',
+					'./src/assets/spa/models/*.js',
 					'./src/assets/spa/views/*.js',
 					'./src/assets/spa/app.js'
 				],
