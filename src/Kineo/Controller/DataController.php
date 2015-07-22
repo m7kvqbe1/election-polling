@@ -5,6 +5,8 @@ use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Kineo\Component\Database;
+use Kineo\Component\ApiResponse;
+use Kineo\Model\ConstituenciesModel;
 
 class DataController
 {
@@ -19,7 +21,13 @@ class DataController
 	{		
 		$constituencies = new ConstituenciesModel(new Database());
 		
-		return 'fetchConstituenciesAction';
+		try {
+			$constituencies->getAllConstituencies();
+			
+			return json_encode($constituencies);
+		} catch(\Exception $e) {
+			return ApiResponse::error('NO_CONSTITUENCIES_FOUND');
+		}
 	}
 	
 	public function fetchCandidatesAction($constituencyId) 

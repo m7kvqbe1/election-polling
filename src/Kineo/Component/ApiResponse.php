@@ -54,33 +54,9 @@ class ApiResponse extends Response
 				$response->setStatusCode(Response::HTTP_OK);
 				break;
 
-			case 'USER_EXISTS':
-			case 'COMPANY_EXISTS':
-			case 'USER_NOT_FOUND':
-			case 'USER_FETCH_FAIL':
-			case 'USER_REMOVE_FAIL':
-			case 'USER_PROPERTY_DELETE_FAIL':
-			case 'USER_PROPERTY_SET_FAIL':
-			case 'USER_ADD_FAIL':
-			case 'USER_COMPANY_NOT_FOUND':
-			case 'CLIENT_ADD_FAIL':
-			case 'CLIENT_EDIT_FAIL':
-			case 'CLIENT_NOT_FOUND':
-			case 'FILE_NOT_FOUND':
-			case 'FILE_UPLOAD_FAIL':
-			case 'REPLIES_NOT_FOUND':
-			case 'REPLY_FAIL':
-			case 'TICKET_EDIT_FAIL':
-			case 'TICKET_ADD_FAIL':
-			case 'TICKET_NOT_FOUND':
-			case 'ATTACHMENT_DELETE_FAIL':
+			case 'NO_CONSTITUENCIES_FOUND';
 				// 400 - Bad Request
 				$response->setStatusCode(Response::HTTP_BAD_REQUEST);
-				break;
-				
-			case 'STRIPE_INVALID_SUBSCRIPTION':
-				// 402 - Payment Required
-				$response->setStatusCode(Response::HTTP_PAYMENT_REQUIRED);
 				break;
 
 			case 'SESSION_EXPIRED':
@@ -108,33 +84,6 @@ class ApiResponseMessageDefinition
 	const PASSWORD_INVALID = 'The password provided is incorrect.';
 	const USER_UNVERIFIED = 'This user account has not yet been verified.';
 	const INVALID_VERIFICATION_CODE = 'The supplied verification code is invalid.';
-
-	const STRIPE_INVALID_SUBSCRIPTION = 'No valid subscription found.';
-
-	const USER_EXISTS = 'This user account already exists';
-	const USER_NOT_FOUND = 'The specified user does not exist.';
-	const USER_FETCH_FAIL = 'No users found';
-	const USER_REMOVE_FAIL = 'There was a problem removing this user.';
-	const USER_PROPERTY_DELETE_FAIL = 'There was a problem removing the specified user property.';
-	const USER_PROPERTY_SET_FAIL = 'There was a problem setting the specified user property.';
-	const USER_ADD_FAIL = 'There was a problem creating this user.';
-	const USER_COMPANY_NOT_FOUND = 'The authenticated users company could not be found.';
-
-	const COMPANY_EXISTS = 'This company already exists';
-
-	const CLIENT_ADD_FAIL = 'There was a problem creating this client.';
-	const CLIENT_EDIT_FAIL = 'There was a problem editing this client.';
-	const CLIENT_NOT_FOUND = 'The specified client(s) could not be found.';
-
-	const FILE_NOT_FOUND = 'The specified file(s) could not be found.';
-	const FILE_UPLOAD_FAIL = 'There was a problem saving the file.';
-
-	const REPLIES_NOT_FOUND = 'No replies were found.';
-	const REPLY_FAIL = 'There was a problem replying to the ticket.';
-
-	const TICKET_EDIT_FAIL = 'There was a problem editing the ticket.';
-	const TICKET_ADD_FAIL = 'There was a problem adding this ticket.';
-	const TICKET_NOT_FOUND = 'The specified ticket(s) could not be found.';
-
-	const ATTACHMENT_DELETE_FAIL = 'There was a problem deleting this attachment.';
+	
+	const NO_CONSTITUENCIES_FOUND = 'Sorry, we couldn\'t find any constituencies';
 }

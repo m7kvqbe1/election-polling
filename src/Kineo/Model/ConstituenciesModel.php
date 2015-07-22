@@ -1,6 +1,8 @@
 <?php
 namespace Kineo\Model;
 
+use Kineo\Component\Database;
+
 class ConstituenciesModel extends BaseModel 
 {
 	protected $db;
@@ -9,18 +11,16 @@ class ConstituenciesModel extends BaseModel
 	
 	public function __construct(Database $db)
 	{
-		$this->app = $app;
 		$this->db = $db;
 	}
 	
 	public function getAllConstituencies() 
 	{
-		$this->db->connection->query("SELECT * FROM `tblConstituencies`");
-		
+		$stmt = $this->db->connection->query("SELECT * FROM `tblConstituencies`");
 		$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 		
-		if(!empty($result) && is_array()) {
-			$this->constituencies = $result;	
+		if(is_array($result) && !empty($result)) {
+			$this->constituencies = $result;
 		} else {
 			throw new \Exception('No constituencies found');
 		}
