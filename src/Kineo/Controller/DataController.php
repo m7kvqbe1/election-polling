@@ -18,7 +18,7 @@ class DataController
 		$this->app = $app;
 	}
 	
-	public function fetchConstituenciesAction(Request $request)
+	public function fetchConstituenciesAction()
 	{		
 		$constituenciesModel = new ConstituenciesModel(new Database());
 		

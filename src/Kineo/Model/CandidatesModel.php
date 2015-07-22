@@ -17,7 +17,7 @@ class CandidatesModel extends BaseModel
 	public function getCandidatesByConstituencyId($constituencyId) 
 	{
 		$stmt = $this->db->connection->prepare(
-			"SELECT * FROM `tblCandidates` AS a 
+			"SELECT a.id, a.name, a.party FROM `tblCandidates` AS a 
 			LEFT JOIN `tblConstituencies` AS b 
 			ON a.constituency_id = b.id 
 			WHERE b.id = :id"
@@ -30,7 +30,7 @@ class CandidatesModel extends BaseModel
 		$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 		
 		if(is_array($result) && !empty($result)) {
-			$this->constituencies = $result;
+			$this->candidates = $result;
 		} else {
 			throw new \Exception('No candidates found');
 		}

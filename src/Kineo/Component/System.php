@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class System
 {
-	public static function generateAssets(Request $request, Application $app)
+	public static function generateAssets()
 	{
 		switch(APP_ENV) {
 			case 'DEVELOPMENT':

@@ -16,16 +16,16 @@ var app = app || {};
 			var _this = this;
 			
 			// Define render callback
-			var renderHtml = function(data) {
+			var initialRender = function(constituencyOptions) {
 				_this.$el.html(
 					_this.template({
-						constituencyOptions: data
+						constituencyOptions: constituencyOptions
 					})
 				);
 			};
 			
 			// Fetch latest constituency options before rendering HTML to DOM
-			this.model.getConstituencyOptions(renderHtml);
+			this.model.getConstituencyOptions(initialRender);
 			
 			this.delegateEvents({
 				'change input[type=radio]': 'displayVoteSelectToggle',
@@ -42,15 +42,24 @@ var app = app || {};
 		},
 		
 		injectCandidateOptions: function() {
-			// Get selected candidate ID from form
-			var selectedId = $('#constituency option:selected').val();
+			var _this = this;
 			
-			console.log(this.model);
+			// Get selected candidate ID from form
+			var constituencyId = $('#constituency option:selected').val();
+			
+			// Define render callback
+			var candidatesOptionsRender = function(candidateOptions) {
+				// Only changes part of the view
+				var html = '<option value="" selected disabled>Please select a candidate</option>';
+				candidateOptions.forEach( function(item) {
+					html = html + '<option value="' + item.id + '">' + item.name + ' - ' + item.party + '</option>';
+				});
+				
+				_this.$el.find('select#candidate').html(html);
+			};
 			
 			// Pull candidates from API, build options markup and inject into DOM
-			this.model.getCandidateOptions(selectedId, function() {
-				console.log(data);
-			});
-		}
+			this.model.getCandidateOptions(constituencyId, candidatesOptionsRender);
+		}	
 	});
 })(jQuery);

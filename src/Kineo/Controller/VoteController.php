@@ -4,10 +4,10 @@ namespace Kineo\Controller;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Kineo\Component\Database;
+use Kineo\Component\ApiResponse;
 
-use Kineo\Component\System;
-
-class IndexController 
+class DataController
 {
 	protected $app;
 	
@@ -16,8 +16,8 @@ class IndexController
 		$this->app = $app;
 	}
 	
-	public function indexAction()
-	{		
-		return System::generateAssets();
+	public function castVoteAction() 
+	{
+		return 'castVoteAction';
 	}
 }

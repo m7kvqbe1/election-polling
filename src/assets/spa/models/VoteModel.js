@@ -10,14 +10,26 @@ var app = app || {};
 			vote: false
 		},
 		
-		getConstituencyOptions: function(callback) {			
-			$.getJSON('/api/data/constituencies', function(data) {				
+		constituencyOptions: [],
+		
+		candidateOptions: [],
+		
+		getConstituencyOptions: function(callback) {
+			var _this = this;
+			
+			$.getJSON('/api/data/constituencies', function(data) {								
+				_this.constituencyOptions = data;
+				
 				callback(data);
 			});
 		},
 		
 		getCandidateOptions: function(constituencyId, callback) {
+			var _this = this;
+			
 			$.getJSON('/api/data/candidates/' + constituencyId, function(data) {
+				_this.candidateOptions = data;
+				
 				callback(data);
 			});
 		}

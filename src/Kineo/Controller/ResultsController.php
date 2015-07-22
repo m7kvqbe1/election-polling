@@ -14,7 +14,7 @@ class ResultsController
 		$this->app = $app;
 	}
 	
-	public function fetchResultsAction(Request $request)
+	public function fetchResultsAction()
 	{		
 		return 'fetchResultsAction';
 	}
