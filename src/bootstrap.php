@@ -12,7 +12,6 @@ use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\MonologServiceProvider;
-use Silex\Provider\SwiftmailerServiceProvider;
 	
 // Character encoding
 mb_internal_encoding('UTF-8');
@@ -47,21 +46,8 @@ $app->register(new MonologServiceProvider(), array(
 	'monolog.level' => LOG_LEVEL
 ));
 
-// Register Swiftmailer service provider
-$app->register(new SwiftmailerServiceProvider());
-$app['swiftmailer.options'] = array(
-	'host' => SMTP_HOST,
-	'port' => SMTP_PORT,
-	'username' => SMTP_USERNAME,
-	'password' => SMTP_PASSWORD,
-	'encryption' => null,
-	'auth_mode' => null
-);
-
 // Error handler
 $app->error(function(\Exception $e, $code) use ($app) {
-	$app['airbrake']->notifyOnException($e);
-
 	if($app['debug']) return;
 
 	switch($code) {
