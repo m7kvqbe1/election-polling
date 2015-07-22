@@ -21,8 +21,8 @@ $(function() {
 			new app.ResultsView();
 		},
 		
-		voteView: function() {			
-			new app.VoteView();
+		voteView: function() {				
+			new app.VoteView({ model: app.voteModel });
 		}
 	});
 	

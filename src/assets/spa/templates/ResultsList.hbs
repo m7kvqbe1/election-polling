@@ -13,7 +13,16 @@
 	
 	<div class="clearfix"></div>
 	
-	<div class="container-fluid">
+	<div class="container-fluid">		
+		<div class="pull-right text-right">
+			<!-- Filter results by constituency -->
+			<label for="filter_constituency">Filter:&nbsp;</label>
+			<select id="filter_constituency">
+				<option value="" selected disabled>Select a constituency</option>
+				<option value="1">Portsmouth South</option>
+			</select>
+		</div>
+		
 		<table class="table table-hover">
 			<!-- Use handlebars to generate tabular result display -->
 			<thead>
@@ -76,16 +85,5 @@
 				</tr>
 			</tbody>
 		</table>
-		
-		<hr />
-		
-		<div class="pull-right text-right">
-			<!-- Filter results by constituency -->
-			<label for="filter_constituency">Filter:&nbsp;</label>
-			<select id="filter_constituency">
-				<option value="" selected disabled>Select a constituency</option>
-				<option value="1">Portsmouth South</option>
-			</select>
-		</div>
 	</div>
 </div>

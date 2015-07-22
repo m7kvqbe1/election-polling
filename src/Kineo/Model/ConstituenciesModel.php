@@ -16,7 +16,10 @@ class ConstituenciesModel extends BaseModel
 	
 	public function getAllConstituencies() 
 	{
-		$stmt = $this->db->connection->query("SELECT * FROM `tblConstituencies`");
+		$stmt = $this->db->connection->query(
+			"SELECT * FROM `tblConstituencies`"
+		);
+		
 		$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 		
 		if(is_array($result) && !empty($result)) {

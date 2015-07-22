@@ -38,7 +38,7 @@
 			<div class="col-sm-10">
 				<select name="constituency" id="constituency">
 					<option value="" disabled selected>Select a constituency</option>
-					{{getConstituencies}}
+					{{buildOptions constituencyOptions}}
 				</select>
 			</div>
 		</div>
@@ -59,8 +59,7 @@
 				<!-- Populated via AJAX with the candidates for the constituency specified above -->
 				<select name="candidate" id="candidate">
 					<option value="" disabled selected>Select a candidate</option>
-					<option value="1">Mike Hancock</option>
-					{{getCandidates attributes.constituencyId}}
+					<!-- Prepend candidate options via AJAX if a constituency is selected -->
 				</select>
 			</div>
 		</div>

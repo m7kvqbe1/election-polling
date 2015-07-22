@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Kineo\Component\Database;
 use Kineo\Component\ApiResponse;
 use Kineo\Model\ConstituenciesModel;
+use Kineo\Model\CandidatesModel;
 
 class DataController
 {
@@ -19,12 +20,12 @@ class DataController
 	
 	public function fetchConstituenciesAction(Request $request)
 	{		
-		$constituencies = new ConstituenciesModel(new Database());
+		$constituenciesModel = new ConstituenciesModel(new Database());
 		
 		try {
-			$constituencies->getAllConstituencies();
+			$constituenciesModel->getAllConstituencies();
 			
-			return json_encode($constituencies);
+			return json_encode($constituenciesModel->constituencies);
 		} catch(\Exception $e) {
 			return ApiResponse::error('NO_CONSTITUENCIES_FOUND');
 		}
@@ -32,6 +33,14 @@ class DataController
 	
 	public function fetchCandidatesAction($constituencyId) 
 	{
-		return 'fetchCandidatesAction';		
+		$candidatesModel = new CandidatesModel(new Database());
+		
+		try {
+			$candidatesModel->getCandidatesByConstituencyId($constituencyId);
+			
+			return json_encode($candidatesModel->candidates);
+		} catch(\Exception $e) {
+			return ApiResponse::error('NO_CANDIDATES_FOUND');
+		}
 	}
 }

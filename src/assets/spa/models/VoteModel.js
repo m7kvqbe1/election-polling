@@ -8,6 +8,18 @@ var app = app || {};
 		
 		defaults: {
 			vote: false
+		},
+		
+		getConstituencyOptions: function(callback) {			
+			$.getJSON('/api/data/constituencies', function(data) {				
+				callback(data);
+			});
+		},
+		
+		getCandidateOptions: function(constituencyId, callback) {
+			$.getJSON('/api/data/candidates/' + constituencyId, function(data) {
+				callback(data);
+			});
 		}
 	});
 	

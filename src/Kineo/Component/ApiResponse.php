@@ -54,6 +54,7 @@ class ApiResponse extends Response
 				$response->setStatusCode(Response::HTTP_OK);
 				break;
 
+			case 'NO_CANDIDATES_FOUND':
 			case 'NO_CONSTITUENCIES_FOUND';
 				// 400 - Bad Request
 				$response->setStatusCode(Response::HTTP_BAD_REQUEST);
@@ -86,4 +87,5 @@ class ApiResponseMessageDefinition
 	const INVALID_VERIFICATION_CODE = 'The supplied verification code is invalid.';
 	
 	const NO_CONSTITUENCIES_FOUND = 'Sorry, we couldn\'t find any constituencies';
+	const NO_CANDIDATES_FOUND = 'Sorry, we couldn\'t find any candidates for this constituency';
 }

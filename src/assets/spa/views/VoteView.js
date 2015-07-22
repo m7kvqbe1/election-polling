@@ -13,19 +13,44 @@ var app = app || {};
 		},
 		
 		render: function() {
-			this.$el.html(this.template());
+			var _this = this;
 			
-			InterfaceHelpers.setMenuItemActive('vote');
+			// Define render callback
+			var renderHtml = function(data) {
+				_this.$el.html(
+					_this.template({
+						constituencyOptions: data
+					})
+				);
+			};
+			
+			// Fetch latest constituency options before rendering HTML to DOM
+			this.model.getConstituencyOptions(renderHtml);
 			
 			this.delegateEvents({
-				'change input[type=radio]': 'displayVoteSelectToggle'
+				'change input[type=radio]': 'displayVoteSelectToggle',
+				'change select#constituency': 'injectCandidateOptions'
 			});
+			
+			InterfaceHelpers.setMenuItemActive('vote');
 			
 			return this;
 		},
 		
 		displayVoteSelectToggle: function() {
 			$('.question_2').toggleClass('hidden');
+		},
+		
+		injectCandidateOptions: function() {
+			// Get selected candidate ID from form
+			var selectedId = $('#constituency option:selected').val();
+			
+			console.log(this.model);
+			
+			// Pull candidates from API, build options markup and inject into DOM
+			this.model.getCandidateOptions(selectedId, function() {
+				console.log(data);
+			});
 		}
 	});
 })(jQuery);

@@ -8,22 +8,21 @@
 			}
 		},
 		
-		helpers: {
-			getCandidates: function(constituencyId) {
-				// Get candidates from API via AJAX
-				var candidates = ['foo', 'bar', 'baz', 'qux'];
-				return new Handlebars.SafeString(candidates);
-			},
-			
-			getConstituencies: function() {
-				// Get candidates from API via AJAX
-				var constituencies = ['foo', 'bar', 'baz', 'qux'];
-				return new Handlebars.SafeString(constituencies);
+		helpers: {			
+			buildOptions: function(objArray) {
+				if (!Array.isArray(objArray)) return;
+				
+				var html = '';
+				objArray.forEach(function(item) {
+					html = html + '<option value="' + item.id + '">' + item.name + '</option>';
+				});
+				
+				return new Handlebars.SafeString(html);
 			}
 		}	
 	};
 	
 	$(function() {
 		HandlebarsHelpers.bindHelpers();
-	})
-})(jQuery)
+	});
+})(jQuery);
