@@ -7,11 +7,11 @@ var app = app || {};
 		template: JST.ResultsList,
 		
 		initialize: function() {			            
-            this.collection = app.resultsCollection
+			this.collection = app.resultsCollection
             
-            this.listenTo(this.collection, 'reset add remove change sort sync', this.render);
+			this.listenTo(this.collection, 'reset add remove change sort sync', this.render);
             
-            this.collection.fetch();
+			this.collection.fetch();
 		},
 		
 		render: function(filteredCollection) {			
