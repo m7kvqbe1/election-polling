@@ -43,15 +43,18 @@ Results Filter
 
 Things to note about the voting feature: 
 
-Feedback from API (problem committing to database, user already voted, validation). 
-Dynamically populates potential candidates based on constituency selected.
+- Feedback from API (e.g. with problem committing to database / if a user voted). 
+- Dynamically populates potential candidates based on constituency selected.
+- Client side validation
 
 Really sorry it's tabs and not 4 spaces!!
 
 ## With more time
 
-If I had more time I would have added DocBlocks as I developed to the API code and really regret not doign this.
+- If I had more time I would have added DocBlocks as I developed to the API code and really regret not doign this.
 
-The SPA would also have a few niggles resolved like using pushstate instead of the #
+- It would have much much higher test coverage.
 
-It would also have much much higher test coverage.
+- I'd be much more careful about filtering input server side.
+
+- The SPA would also have a few niggles resolved like using pushstate instead of the #
