@@ -40,11 +40,6 @@ $(function() {
 	app.router = new Router();
 	
 	Backbone.history.start();
-	
-	/*Backbone.history.start({
-		pushState: true, 
-		root: app.Router.root
-	});*/
 });
 
 // Bypass router for anchors with data-bypass="true" data attribute

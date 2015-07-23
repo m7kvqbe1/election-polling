@@ -77,20 +77,20 @@ var app = app || {};
 				voting: this.$el.find('input[name="voting"]:checked').val(),
 				candidate: this.$el.find('select[name="candidate"]').val()
 			});
-            
-            this.model.save(null, {
-	            success: function(model, response) {					
+			
+			this.model.save(null, {
+				success: function(model, response) {					
 					// Display success / thank you message and disable form
 					$('#app').find('button[type=submit]').prop('disabled', true);
 					$('#app').find('form .notice').html('Thank you your vote has been counted!');
-	            },
-	            
-	            error: function(model, response) {		            
-		            // Display clean error response from API
-		            var apiResponse = JSON.parse(response.responseText);		            
-		            $('#app').find('form .notice').html(apiResponse.message);
-	            }
-            });
+				},
+
+				error: function(model, response) {		            
+					// Display clean error response from API
+					var apiResponse = JSON.parse(response.responseText);		            
+					$('#app').find('form .notice').html(apiResponse.message);
+				}
+			});
 		}
 	});
 })(jQuery);
