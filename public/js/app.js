@@ -45,7 +45,7 @@ this["JST"]["VoteForm"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],
     + alias2((helpers.buildOptions || (depth0 && depth0.buildOptions) || alias1).call(depth0,(depth0 != null ? depth0.constituencyOptions : depth0),{"name":"buildOptions","hash":{},"data":data}))
     + "\n				</select>\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label class=\"col-sm-2 control-label\">Are you going to vote?&nbsp;</label>\n			<div class=\"col-sm-10\">\n				<input type=\"radio\" name=\"voting\" id=\"voting-yes\" value=\"1\" />&nbsp;<label for=\"voting-yes\">Yes</label>\n				&nbsp;<input type=\"radio\" name=\"voting\" id=\"voting-no\" value=\"0\" checked />&nbsp;<label for=\"voting-no\">No</label>\n			</div>\n		</div>\n		\n		<div class=\"form-group hidden question_2\">\n			<!-- Hidden unless first question is answered yes - use Backbone events -->\n			<label for=\"candidate\" class=\"col-sm-2 control-label\">Who are you going to vote for?&nbsp;</label>\n\n			<div class=\"col-sm-10\">			\n				<!-- Populated via AJAX with the candidates for the constituency specified above -->\n				<select name=\"candidate\" id=\"candidate\">\n					<option value=\"\" disabled selected>Select a candidate</option>\n					<!-- Prepend candidate options via AJAX if a constituency is selected -->\n					"
     + alias2((helpers.buildOptions || (depth0 && depth0.buildOptions) || alias1).call(depth0,(depth0 != null ? depth0.candidateOptions : depth0),{"name":"buildOptions","hash":{},"data":data}))
-    + "\n				</select>\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<div class=\"col-sm-2\">\n				\n			</div>\n			<div class=\"col-sm-10\">\n				<button type=\"submit\" class=\"btn btn-default\">Submit</button>\n			</div>\n		</div>\n	</form>\n</div>";
+    + "\n				</select>\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<div class=\"col-sm-2\">\n				\n			</div>\n			<div class=\"col-sm-10\">\n				<button type=\"submit\" class=\"btn btn-default\">Submit</button>\n				<p class=\"notice\"></p>\n			</div>\n		</div>\n	</form>\n</div>";
 },"useData":true});
 
 this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -301,7 +301,6 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 			e.preventDefault();
 			
 			if(!Validate.validateForm(this.$el.find('form'))) {
-				console.log('validation failed');
 				return false;
 			}
 
@@ -314,10 +313,22 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 				candidate: this.$el.find('select[name="candidate"]').val()
 			});
             
-            this.model.save();
-			
-			// Update view with confirmation message
-			console.log('submitVote');
+            this.model.save(null, {
+	            success: function(model, response) {					
+					// Display success / thank you message and disable form
+					$('#app').find('button[type=submit]').prop('disabled', true);
+					$('#app').find('form .notice').html('Thank you your vote has been counted!');
+	            },
+	            
+	            error: function(model, response) {		            
+		            // Display clean error response from API
+		            var apiResponse = JSON.parse(response.responseText);
+		            
+		            console.log(response.responseText);
+		            
+		            $('#app').find('form .notice').html(apiResponse.message);
+	            }
+            });
 		}
 	});
 })(jQuery);;var app = app || {};

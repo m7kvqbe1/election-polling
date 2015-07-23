@@ -66,7 +66,6 @@ var app = app || {};
 			e.preventDefault();
 			
 			if(!Validate.validateForm(this.$el.find('form'))) {
-				console.log('validation failed');
 				return false;
 			}
 
@@ -79,10 +78,19 @@ var app = app || {};
 				candidate: this.$el.find('select[name="candidate"]').val()
 			});
             
-            this.model.save();
-			
-			// Update view with confirmation message
-			console.log('submitVote');
+            this.model.save(null, {
+	            success: function(model, response) {					
+					// Display success / thank you message and disable form
+					$('#app').find('button[type=submit]').prop('disabled', true);
+					$('#app').find('form .notice').html('Thank you your vote has been counted!');
+	            },
+	            
+	            error: function(model, response) {		            
+		            // Display clean error response from API
+		            var apiResponse = JSON.parse(response.responseText);		            
+		            $('#app').find('form .notice').html(apiResponse.message);
+	            }
+            });
 		}
 	});
 })(jQuery);

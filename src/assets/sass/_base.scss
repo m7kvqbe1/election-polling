@@ -5,5 +5,10 @@ body {
 }
 
 .error {
-	border-color: red !important;
+	border-color: #ff0000 !important;
+}
+
+.notice {
+	display: inline-block;
+	margin-left: 20px;
 }
