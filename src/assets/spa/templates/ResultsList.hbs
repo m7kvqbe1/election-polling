@@ -16,73 +16,46 @@
 	<div class="container-fluid">		
 		<div class="pull-right text-right">
 			<!-- Filter results by constituency -->
-			<label for="filter_constituency">Filter:&nbsp;</label>
-			<select id="filter_constituency">
+			<label for="filter-constituency">Filter:&nbsp;</label>
+			<select id="filter-constituency">
 				<option value="" selected disabled>Select a constituency</option>
-				<option value="1">Portsmouth South</option>
+				{{#if models}}
+				{{#each models}}
+				<option value="{{attributes.constituency_id}}">{{attributes.constituency}}</option>
+				{{/each}}
+				{{/if}}
 			</select>
 		</div>
 		
 		<table class="table table-hover">
-			<!-- Use handlebars to generate tabular result display -->
 			<thead>
 				<tr>
-					<th>#</th>
-					<th>Candidate</th>
+					<th>Candidate Name</th>
+					<th>Party</th>
 					<th>Constituency</th>
 					<th>Vote Count</th>
 				</tr>
 			</thead>
 			<tbody>
 				<!-- Results -->
+				{{#if models}}
+				{{#each models}}
 				<tr>
-					<td>1</td>
-					<td>Mike Hancock</td>
-					<td>Portsmouth South</td>
-					<td>4324</td>
+					<td>
+						{{attributes.name}}
+					</td>
+					<td>
+						{{attributes.party}}
+					</td>
+					<td>
+						{{attributes.constituency}}
+					</td>
+					<td>
+						{{attributes.count}}
+					</td>
 				</tr>
-				
-				<tr>
-					<td>1</td>
-					<td>Mike Hancock</td>
-					<td>Portsmouth South</td>
-					<td>4324</td>
-				</tr>
-				
-				<tr>
-					<td>1</td>
-					<td>Mike Hancock</td>
-					<td>Portsmouth South</td>
-					<td>4324</td>
-				</tr>
-				
-				<tr>
-					<td>1</td>
-					<td>Mike Hancock</td>
-					<td>Portsmouth South</td>
-					<td>4324</td>
-				</tr>
-				
-				<tr>
-					<td>1</td>
-					<td>Mike Hancock</td>
-					<td>Portsmouth South</td>
-					<td>4324</td>
-				</tr>
-				
-				<tr>
-					<td>1</td>
-					<td>Mike Hancock</td>
-					<td>Portsmouth South</td>
-					<td>4324</td>
-				</tr>
-				
-				<tr>
-					<td>1</td>
-					<td>Mike Hancock</td>
-					<td>Portsmouth South</td>
-					<td>4324</td>
-				</tr>
+				{{/each}}
+				{{/if}}
 			</tbody>
 		</table>
 	</div>

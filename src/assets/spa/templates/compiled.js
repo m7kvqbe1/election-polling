@@ -1,7 +1,41 @@
 this["JST"] = this["JST"] || {};
 
-this["JST"]["ResultsList"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#results\">Results</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">\n	<hr />\n	\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n	\n	<hr />\n	\n	<div class=\"clearfix\"></div>\n	\n	<div class=\"container-fluid\">		\n		<div class=\"pull-right text-right\">\n			<!-- Filter results by constituency -->\n			<label for=\"filter_constituency\">Filter:&nbsp;</label>\n			<select id=\"filter_constituency\">\n				<option value=\"\" selected disabled>Select a constituency</option>\n				<option value=\"1\">Portsmouth South</option>\n			</select>\n		</div>\n		\n		<table class=\"table table-hover\">\n			<!-- Use handlebars to generate tabular result display -->\n			<thead>\n				<tr>\n					<th>#</th>\n					<th>Candidate</th>\n					<th>Constituency</th>\n					<th>Vote Count</th>\n				</tr>\n			</thead>\n			<tbody>\n				<!-- Results -->\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n			</tbody>\n		</table>\n	</div>\n</div>";
+this["JST"]["ResultsList"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.models : depth0),{"name":"each","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "");
+},"2":function(depth0,helpers,partials,data) {
+    var stack1, alias1=this.lambda, alias2=this.escapeExpression;
+
+  return "				<option value=\""
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.constituency_id : stack1), depth0))
+    + "\">"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.constituency : stack1), depth0))
+    + "</option>\n";
+},"4":function(depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.models : depth0),{"name":"each","hash":{},"fn":this.program(5, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "");
+},"5":function(depth0,helpers,partials,data) {
+    var stack1, alias1=this.lambda, alias2=this.escapeExpression;
+
+  return "				<tr>\n					<td>\n						"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.name : stack1), depth0))
+    + "\n					</td>\n					<td>\n						"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.party : stack1), depth0))
+    + "\n					</td>\n					<td>\n						"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.constituency : stack1), depth0))
+    + "\n					</td>\n					<td>\n						"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.attributes : depth0)) != null ? stack1.count : stack1), depth0))
+    + "\n					</td>\n				</tr>\n";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#results\">Results</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">\n	<hr />\n	\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n	\n	<hr />\n	\n	<div class=\"clearfix\"></div>\n	\n	<div class=\"container-fluid\">		\n		<div class=\"pull-right text-right\">\n			<!-- Filter results by constituency -->\n			<label for=\"filter-constituency\">Filter:&nbsp;</label>\n			<select id=\"filter-constituency\">\n				<option value=\"\" selected disabled>Select a constituency</option>\n"
+    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.models : depth0),{"name":"if","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "			</select>\n		</div>\n		\n		<table class=\"table table-hover\">\n			<thead>\n				<tr>\n					<th>Candidate Name</th>\n					<th>Party</th>\n					<th>Constituency</th>\n					<th>Vote Count</th>\n				</tr>\n			</thead>\n			<tbody>\n				<!-- Results -->\n"
+    + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.models : depth0),{"name":"if","hash":{},"fn":this.program(4, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "			</tbody>\n		</table>\n	</div>\n</div>";
 },"useData":true});
 
 this["JST"]["VoteForm"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {

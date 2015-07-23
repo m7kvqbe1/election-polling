@@ -6,6 +6,8 @@ var app = app || {};
 	app.VoteView = Backbone.View.extend({
 		el: '#app',
 		
+		model: app.voteModel,
+		
 		template: JST.VoteForm,
 		
 		initialize: function() {		
@@ -28,7 +30,7 @@ var app = app || {};
 			this.model.getConstituencyOptions(initialRender);
 			
 			this.delegateEvents({
-				'change input[name=radio]': 'displayVoteSelectToggle',
+				'change input[name="voting"]': 'displayVoteSelectToggle',
 				'change select#constituency': 'injectCandidateOptions',
 				'submit form#form-voting': 'submitVote'
 			});

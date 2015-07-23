@@ -17,10 +17,13 @@ class ResultsModel extends BaseModel
 	public function getResults() 
 	{
 		$stmt = $this->db->connection->query(
-			"SELECT a.name, a.party, COUNT(*) AS count FROM tblCandidates AS a
-			LEFT JOIN tblVotes AS b
+			"SELECT a.name, a.party, a.constituency_id, c.name AS constituency, COUNT(*) AS count 
+			FROM tblCandidates AS a
+			INNER JOIN tblVotes AS b
 			ON a.id = b.candidate_id
-			GROUP BY a.name
+			LEFT JOIN tblConstituencies AS c
+			ON a.constituency_id = c.id
+			GROUP BY b.candidate_id
 			ORDER BY count DESC"
 		);
 		

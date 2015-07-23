@@ -17,12 +17,12 @@ $(function() {
 			new app.IndexView();
 		},
 		
-		resultsView: function() {			
+		resultsView: function() {
 			new app.ResultsView();
 		},
 		
 		voteView: function() {				
-			new app.VoteView({ model: app.voteModel });
+			new app.VoteView();
 		}
 	});
 	
@@ -35,10 +35,6 @@ $(function() {
 		root: app.Router.root
 	});*/
 });
-
-
-// ----- MOVE THE STUFF BELOW THIS LINE INTO APPROPRIATE PLACES!
-
 
 // Bypass router for anchors with data-bypass="true" data attribute
 $(document).on("click", "a[href]:not([data-bypass])", function(evt) {
