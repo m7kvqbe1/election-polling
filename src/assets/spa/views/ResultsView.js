@@ -21,11 +21,11 @@ var app = app || {};
 						
 			this.$el.html(this.template(this.collection));
 			
-			InterfaceHelpers.setMenuItemActive('results');
-			
 			this.delegateEvents({
 				'change select#filter-constituency': 'filterByConstituency'
 			});
+			
+			InterfaceHelpers.setMenuItemActive('results');
 			
 			return this;
 		},

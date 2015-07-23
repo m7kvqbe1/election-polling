@@ -207,11 +207,11 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 		template: JST.ResultsList,
 		
 		initialize: function() {			            
-            this.collection = app.resultsCollection
+			this.collection = app.resultsCollection
             
-            this.listenTo(this.collection, 'reset add remove change sort sync', this.render);
+			this.listenTo(this.collection, 'reset add remove change sort sync', this.render);
             
-            this.collection.fetch();
+			this.collection.fetch();
 		},
 		
 		render: function(filteredCollection) {			
@@ -221,11 +221,11 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 						
 			this.$el.html(this.template(this.collection));
 			
-			InterfaceHelpers.setMenuItemActive('results');
-			
 			this.delegateEvents({
 				'change select#filter-constituency': 'filterByConstituency'
 			});
+			
+			InterfaceHelpers.setMenuItemActive('results');
 			
 			return this;
 		},
@@ -314,20 +314,20 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 				voting: this.$el.find('input[name="voting"]:checked').val(),
 				candidate: this.$el.find('select[name="candidate"]').val()
 			});
-            
-            this.model.save(null, {
-	            success: function(model, response) {					
+			
+			this.model.save(null, {
+				success: function(model, response) {					
 					// Display success / thank you message and disable form
 					$('#app').find('button[type=submit]').prop('disabled', true);
 					$('#app').find('form .notice').html('Thank you your vote has been counted!');
-	            },
-	            
-	            error: function(model, response) {		            
-		            // Display clean error response from API
-		            var apiResponse = JSON.parse(response.responseText);		            
-		            $('#app').find('form .notice').html(apiResponse.message);
-	            }
-            });
+				},
+
+				error: function(model, response) {		            
+					// Display clean error response from API
+					var apiResponse = JSON.parse(response.responseText);		            
+					$('#app').find('form .notice').html(apiResponse.message);
+				}
+			});
 		}
 	});
 })(jQuery);;var app = app || {};
@@ -372,21 +372,5 @@ $(function() {
 	app.router = new Router();
 	
 	Backbone.history.start();
-	
-	/*Backbone.history.start({
-		pushState: true, 
-		root: app.Router.root
-	});*/
-});
-
-// Bypass router for anchors with data-bypass="true" data attribute
-$(document).on("click", "a[href]:not([data-bypass])", function(evt) {
-	var href = { prop: $(this).prop("href"), attr: $(this).attr("href") };
-	var root = location.protocol + "//" + location.host + app.root;
-
-	if (href.prop.slice(0, root.length) === root) {
-		evt.preventDefault();
-		Backbone.history.navigate(href.attr, true);
-	}
 });
 //# sourceMappingURL=app.js.map

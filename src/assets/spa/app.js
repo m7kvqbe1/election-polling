@@ -41,14 +41,3 @@ $(function() {
 	
 	Backbone.history.start();
 });
-
-// Bypass router for anchors with data-bypass="true" data attribute
-$(document).on("click", "a[href]:not([data-bypass])", function(evt) {
-	var href = { prop: $(this).prop("href"), attr: $(this).attr("href") };
-	var root = location.protocol + "//" + location.host + app.root;
-
-	if (href.prop.slice(0, root.length) === root) {
-		evt.preventDefault();
-		Backbone.history.navigate(href.attr, true);
-	}
-});
