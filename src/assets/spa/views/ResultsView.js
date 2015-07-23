@@ -6,13 +6,15 @@ var app = app || {};
 	app.ResultsView = Backbone.View.extend({		
 		template: JST.ResultsList,
 		
-		initialize: function() {			
-			this.render();
+		initialize: function() {			            
+            this.collection = app.resultsCollection
+            
+            this.listenTo(this.collection, 'reset add remove change sort sync', this.render);
+            
+            this.collection.fetch();
 		},
 		
-		render: function(filteredCollection) {
-			this.collection = app.resultsCollection;
-			
+		render: function(filteredCollection) {			
 			if(typeof filteredCollection !== 'undefined') {
 				this.collection = filteredCollection;
 			}

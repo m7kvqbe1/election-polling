@@ -206,13 +206,15 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 	app.ResultsView = Backbone.View.extend({		
 		template: JST.ResultsList,
 		
-		initialize: function() {			
-			this.render();
+		initialize: function() {			            
+            this.collection = app.resultsCollection
+            
+            this.listenTo(this.collection, 'reset add remove change sort sync', this.render);
+            
+            this.collection.fetch();
 		},
 		
-		render: function(filteredCollection) {
-			this.collection = app.resultsCollection;
-			
+		render: function(filteredCollection) {			
 			if(typeof filteredCollection !== 'undefined') {
 				this.collection = filteredCollection;
 			}
@@ -322,10 +324,7 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 	            
 	            error: function(model, response) {		            
 		            // Display clean error response from API
-		            var apiResponse = JSON.parse(response.responseText);
-		            
-		            console.log(response.responseText);
-		            
+		            var apiResponse = JSON.parse(response.responseText);		            
 		            $('#app').find('form .notice').html(apiResponse.message);
 	            }
             });
