@@ -6,14 +6,14 @@ Welcome to the Kineo Technical Task documentation. This is a single page applica
 
 The application has been built using the following key technologies:
 
-PHP 5.6
-Silex (see composer.json for list of additional packages)
-Backbone.js
-jQuery
-mySQL
-Grunt (for SPA build)
-SASS
-Bootstrap
+- PHP 5.6
+- Silex (see composer.json for list of additional packages)
+- Backbone.js
+- jQuery
+- mySQL
+- Grunt (for SPA build)
+- SASS
+- Bootstrap
 
 ## Pre-requisites
 
@@ -45,6 +45,8 @@ Things to note about the voting feature:
 
 Feedback from API (problem committing to database, user already voted, validation). 
 Dynamically populates potential candidates based on constituency selected.
+
+Really sorry it's tabs and not 4 spaces!!
 
 ## With more time
 
