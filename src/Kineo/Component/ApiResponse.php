@@ -54,6 +54,8 @@ class ApiResponse extends Response
 				$response->setStatusCode(Response::HTTP_OK);
 				break;
 
+			case 'USER_EXISTS':
+			case 'USER_SAVE_FAIL':
 			case 'NO_CANDIDATES_FOUND':
 			case 'NO_CONSTITUENCIES_FOUND';
 				// 400 - Bad Request
@@ -86,6 +88,8 @@ class ApiResponseMessageDefinition
 	const USER_UNVERIFIED = 'This user account has not yet been verified.';
 	const INVALID_VERIFICATION_CODE = 'The supplied verification code is invalid.';
 	
-	const NO_CONSTITUENCIES_FOUND = 'Sorry, we couldn\'t find any constituencies';
-	const NO_CANDIDATES_FOUND = 'Sorry, we couldn\'t find any candidates for this constituency';
+	const NO_CONSTITUENCIES_FOUND = 'Sorry, we couldn\'t find any constituencies.';
+	const NO_CANDIDATES_FOUND = 'Sorry, we couldn\'t find any candidates for this constituency.';
+	const USER_SAVE_FAIL = 'Sorry, there was a problem saving your details to the system.';
+	const USER_EXISTS = 'This email address has already been used to cast a vote.';
 }

@@ -20,7 +20,8 @@ class CandidatesModel extends BaseModel
 			"SELECT a.id, a.name, a.party FROM `tblCandidates` AS a 
 			LEFT JOIN `tblConstituencies` AS b 
 			ON a.constituency_id = b.id 
-			WHERE b.id = :id"
+			WHERE b.id = :id
+			ORDER BY a.name ASC"
 		);
 		
 		$stmt->bindValue(':id', $constituencyId, \PDO::PARAM_INT);
@@ -31,8 +32,10 @@ class CandidatesModel extends BaseModel
 		
 		if(is_array($result) && !empty($result)) {
 			$this->candidates = $result;
+			
+			return $this->candidates;
 		} else {
-			throw new \Exception('No candidates found');
+			return false;
 		}
 	}
 }

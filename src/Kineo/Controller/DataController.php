@@ -22,12 +22,10 @@ class DataController
 	{		
 		$constituenciesModel = new ConstituenciesModel(new Database());
 		
-		try {
-			$constituenciesModel->getAllConstituencies();
-			
+		if($constituenciesModel->getAllConstituencies()) {
 			return json_encode($constituenciesModel->constituencies);
-		} catch(\Exception $e) {
-			return ApiResponse::error('NO_CONSTITUENCIES_FOUND');
+		} else {
+			return ApiResponse::error('NO_CONSTITUENCIES_FOUND');	
 		}
 	}
 	
@@ -35,12 +33,10 @@ class DataController
 	{
 		$candidatesModel = new CandidatesModel(new Database());
 		
-		try {
-			$candidatesModel->getCandidatesByConstituencyId($constituencyId);
-			
+		if($candidatesModel->getCandidatesByConstituencyId($constituencyId)) {
 			return json_encode($candidatesModel->candidates);
-		} catch(\Exception $e) {
-			return ApiResponse::error('NO_CANDIDATES_FOUND');
+		} else {
+			return ApiResponse::error('NO_CANDIDATES_FOUND');	
 		}
 	}
 }

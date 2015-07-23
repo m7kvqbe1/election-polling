@@ -3,7 +3,7 @@
 require_once __DIR__ . '/config-loader.php';
 
 // Composer autoloader
-require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 	
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
@@ -42,7 +42,7 @@ $app->register(new ServiceControllerServiceProvider());
 // Register Monolog service provider for local logging
 $app->register(new MonologServiceProvider(), array(
     'monolog.logfile' => DOCUMENT_ROOT.LOG_PATH,
-	'monolog.name' => 'Houston',
+	'monolog.name' => APP_NAME,
 	'monolog.level' => LOG_LEVEL
 ));
 

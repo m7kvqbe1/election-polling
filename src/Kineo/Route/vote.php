@@ -6,4 +6,4 @@ $app['vote.controller'] = $app->share(function() use ($app) {
 	return new VoteController($app);
 });
 
-$app->post('/api/vote', 'vote.controller.castVote');
+$app->post('/api/vote', 'vote.controller:castVoteAction');

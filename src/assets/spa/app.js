@@ -36,6 +36,10 @@ $(function() {
 	});*/
 });
 
+
+// ----- MOVE THE STUFF BELOW THIS LINE INTO APPROPRIATE PLACES!
+
+
 // Bypass router for anchors with data-bypass="true" data attribute
 $(document).on("click", "a[href]:not([data-bypass])", function(evt) {
 	var href = { prop: $(this).prop("href"), attr: $(this).attr("href") };

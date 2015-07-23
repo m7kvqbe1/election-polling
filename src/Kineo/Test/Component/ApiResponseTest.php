@@ -8,7 +8,7 @@ class ApiResponseTest extends \PHPUnit_Framework_TestCase
 {
 	public function testErrorResponse()
 	{
-		$response = ApiResponse::error('USER_ADD_FAIL');
+		$response = ApiResponse::error('NO_CANDIDATES_FOUND');
 		
 		$this->assertInstanceOf('Symfony\Component\HttpFoundation\Response', $response);
 	}

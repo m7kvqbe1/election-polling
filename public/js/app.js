@@ -1,15 +1,15 @@
 this["JST"] = this["JST"] || {};
 
 this["JST"]["ResultsList"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-    return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#results\">Results</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">\n	<hr />\n	\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n	\n	<hr />\n	\n	<div class=\"clearfix\"></div>\n	\n	<div class=\"container-fluid\">		\n		<div class=\"pull-right text-right\">\n			<!-- Filter results by constituency -->\n			<label for=\"filter_constituency\">Filter:&nbsp;</label>\n			<select id=\"filter_constituency\">\n				<option value=\"\" selected disabled>Select a constituency</option>\n				<option value=\"1\">Portsmouth South</option>\n			</select>\n		</div>\n		\n		<table class=\"table table-hover\">\n			<!-- Use handlebars to generate tabular result display -->\n			<thead>\n				<tr>\n					<th>#</th>\n					<th>Candidate</th>\n					<th>Constituency</th>\n					<th>Vote Count</th>\n				</tr>\n			</thead>\n			<tbody>\n				<! --- Results --->\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n			</tbody>\n		</table>\n	</div>\n</div>";
+    return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#results\">Results</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">\n	<hr />\n	\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n	\n	<hr />\n	\n	<div class=\"clearfix\"></div>\n	\n	<div class=\"container-fluid\">		\n		<div class=\"pull-right text-right\">\n			<!-- Filter results by constituency -->\n			<label for=\"filter_constituency\">Filter:&nbsp;</label>\n			<select id=\"filter_constituency\">\n				<option value=\"\" selected disabled>Select a constituency</option>\n				<option value=\"1\">Portsmouth South</option>\n			</select>\n		</div>\n		\n		<table class=\"table table-hover\">\n			<!-- Use handlebars to generate tabular result display -->\n			<thead>\n				<tr>\n					<th>#</th>\n					<th>Candidate</th>\n					<th>Constituency</th>\n					<th>Vote Count</th>\n				</tr>\n			</thead>\n			<tbody>\n				<!-- Results -->\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n				\n				<tr>\n					<td>1</td>\n					<td>Mike Hancock</td>\n					<td>Portsmouth South</td>\n					<td>4324</td>\n				</tr>\n			</tbody>\n		</table>\n	</div>\n</div>";
 },"useData":true});
 
 this["JST"]["VoteForm"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var alias1=helpers.helperMissing, alias2=this.escapeExpression;
 
-  return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#vote\">Vote</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">	\n	<hr />\n	\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n	\n	<hr />\n	\n	<form id=\"form-voting\" action=\"\" method=\"POST\" class=\"form-horizontal\">\n		<div class=\"form-group\">\n			<label for=\"first_name\" class=\"col-sm-2 control-label\">First Name:</label>\n			<div class=\"col-sm-10\">\n				<input type=\"text\" name=\"first_name\" id=\"first_name\" class=\"form-control\" />\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label for=\"surname\" class=\"col-sm-2 control-label\">Surname:</label>\n			<div class=\"col-sm-10\">\n				<input type=\"text\" name=\"surname\" id=\"surname\" class=\"form-control\" />\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label for=\"email\" class=\"col-sm-2 control-label\">Email:</label>\n			<div class=\"col-sm-10\">\n				<input type=\"email\" name=\"email\" id=\"email\" class=\"form-control\" />\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label for=\"constituency\" class=\"col-sm-2 control-label\">Constituency:&nbsp;</label>\n			<div class=\"col-sm-10\">\n				<select name=\"constituency\" id=\"constituency\">\n					<option value=\"\" disabled selected>Select a constituency</option>\n					"
+  return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#vote\">Vote</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">	\n	<hr />\n	\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n	\n	<hr />\n	\n	<form id=\"form-voting\" class=\"form-horizontal\">\n		<div class=\"form-group\">\n			<label for=\"first_name\" class=\"col-sm-2 control-label\">First Name:</label>\n			<div class=\"col-sm-10\">\n				<input type=\"text\" name=\"first_name\" id=\"first_name\" class=\"form-control\" />\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label for=\"surname\" class=\"col-sm-2 control-label\">Surname:</label>\n			<div class=\"col-sm-10\">\n				<input type=\"text\" name=\"surname\" id=\"surname\" class=\"form-control\" />\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label for=\"email\" class=\"col-sm-2 control-label\">Email:</label>\n			<div class=\"col-sm-10\">\n				<input type=\"email\" name=\"email\" id=\"email\" class=\"form-control\" />\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label for=\"constituency\" class=\"col-sm-2 control-label\">Constituency:&nbsp;</label>\n			<div class=\"col-sm-10\">\n				<select name=\"constituency\" id=\"constituency\">\n					<option value=\"\" disabled selected>Select a constituency</option>\n					"
     + alias2((helpers.buildOptions || (depth0 && depth0.buildOptions) || alias1).call(depth0,(depth0 != null ? depth0.constituencyOptions : depth0),{"name":"buildOptions","hash":{},"data":data}))
-    + "\n				</select>\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label class=\"col-sm-2 control-label\">Are you going to vote?&nbsp;</label>\n			<div class=\"col-sm-10\">\n				<input type=\"radio\" name=\"question_1\" id=\"question_1_yes\" value=\"Yes\" />&nbsp;<label for=\"question_1_yes\">Yes</label>\n				&nbsp;<input type=\"radio\" name=\"question_1\" id=\"question_1_no\" value=\"No\" checked=\"checked\" />&nbsp;<label for=\"question_1_no\">No</label>\n			</div>\n		</div>\n		\n		<div class=\"form-group hidden question_2\">\n			<!-- Hidden unless first question is answered yes - use Backbone events -->\n			<label for=\"candidate\" class=\"col-sm-2 control-label\">Who are you going to vote for?&nbsp;</label>\n\n			<div class=\"col-sm-10\">			\n				<!-- Populated via AJAX with the candidates for the constituency specified above -->\n				<select name=\"candidate\" id=\"candidate\">\n					<option value=\"\" disabled selected>Select a candidate</option>\n					<!-- Prepend candidate options via AJAX if a constituency is selected -->\n					"
+    + "\n				</select>\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<label class=\"col-sm-2 control-label\">Are you going to vote?&nbsp;</label>\n			<div class=\"col-sm-10\">\n				<input type=\"radio\" name=\"voting\" id=\"voting-yes\" value=\"1\" />&nbsp;<label for=\"voting-yes\">Yes</label>\n				&nbsp;<input type=\"radio\" name=\"voting\" id=\"voting-no\" value=\"0\" />&nbsp;<label for=\"voting-no\">No</label>\n			</div>\n		</div>\n		\n		<div class=\"form-group hidden question_2\">\n			<!-- Hidden unless first question is answered yes - use Backbone events -->\n			<label for=\"candidate\" class=\"col-sm-2 control-label\">Who are you going to vote for?&nbsp;</label>\n\n			<div class=\"col-sm-10\">			\n				<!-- Populated via AJAX with the candidates for the constituency specified above -->\n				<select name=\"candidate\" id=\"candidate\">\n					<option value=\"\" disabled selected>Select a candidate</option>\n					<!-- Prepend candidate options via AJAX if a constituency is selected -->\n					"
     + alias2((helpers.buildOptions || (depth0 && depth0.buildOptions) || alias1).call(depth0,(depth0 != null ? depth0.candidateOptions : depth0),{"name":"buildOptions","hash":{},"data":data}))
     + "\n				</select>\n			</div>\n		</div>\n		\n		<div class=\"form-group\">\n			<div class=\"col-sm-2\">\n				\n			</div>\n			<div class=\"col-sm-10\">\n				<button type=\"submit\" class=\"btn btn-default\">Submit</button>\n			</div>\n		</div>\n	</form>\n</div>";
 },"useData":true});
@@ -185,8 +185,9 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 			this.model.getConstituencyOptions(initialRender);
 			
 			this.delegateEvents({
-				'change input[type=radio]': 'displayVoteSelectToggle',
-				'change select#constituency': 'injectCandidateOptions'
+				'change input[name=radio]': 'displayVoteSelectToggle',
+				'change select#constituency': 'injectCandidateOptions',
+				'submit form#form-voting': 'submitVote'
 			});
 			
 			InterfaceHelpers.setMenuItemActive('vote');
@@ -206,8 +207,7 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 			
 			// Define render callback
 			var candidatesOptionsRender = function(candidateOptions) {
-				// Only changes part of the view
-				var html = '<option value="" selected disabled>Please select a candidate</option>';
+				var html = '<option value="" selected disabled>Select a candidate</option>';
 				candidateOptions.forEach( function(item) {
 					html = html + '<option value="' + item.id + '">' + item.name + ' - ' + item.party + '</option>';
 				});
@@ -217,7 +217,25 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 			
 			// Pull candidates from API, build options markup and inject into DOM
 			this.model.getCandidateOptions(constituencyId, candidatesOptionsRender);
-		}	
+		},
+		
+		submitVote: function(e) {
+			e.preventDefault();		
+
+			this.model.set({
+				email: this.$el.find('input[name="email"]').val(),
+				first_name: this.$el.find('input[name="first_name"]').val(),
+				surname: this.$el.find('input[name="surname"]').val(),
+				constituency: this.$el.find('select[name="constituency"]').val(),
+				voting: this.$el.find('input[name="voting"]:checked').val(),
+				candidate: this.$el.find('select[name="candidate"]').val()
+			});
+            
+            this.model.save();
+			
+			// Update view with confirmation message
+			console.log('submitVote');
+		}
 	});
 })(jQuery);;var app = app || {};
 
@@ -256,6 +274,10 @@ $(function() {
 		root: app.Router.root
 	});*/
 });
+
+
+// ----- MOVE THE STUFF BELOW THIS LINE INTO APPROPRIATE PLACES!
+
 
 // Bypass router for anchors with data-bypass="true" data attribute
 $(document).on("click", "a[href]:not([data-bypass])", function(evt) {
