@@ -6064,3 +6064,6 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 1.4em; }
+
+.error {
+  border-color: red !important; }

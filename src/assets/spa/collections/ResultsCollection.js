@@ -18,12 +18,10 @@ var app = app || {};
 			this.fetch();
 		},
 		
-		byFilter: function(key, value){
-			filtered = this.filter(function(data){
-				return data.get(key) === value;
-			});
-
-			return filtered;
+		byConstituency: function(constituency) {
+			return _(this.filter(function(data) {
+				return data.get("constituency") == constituency;
+			}));
 		}
 	});
 	

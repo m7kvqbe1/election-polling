@@ -3,9 +3,7 @@ var app = app || {};
 (function($) {
 	'use strict';
 	
-	app.VoteView = Backbone.View.extend({
-		el: '#app',
-		
+	app.VoteView = Backbone.View.extend({		
 		model: app.voteModel,
 		
 		template: JST.VoteForm,
@@ -65,7 +63,12 @@ var app = app || {};
 		},
 		
 		submitVote: function(e) {
-			e.preventDefault();		
+			e.preventDefault();
+			
+			if(!Validate.validateForm(this.$el.find('form'))) {
+				console.log('validation failed');
+				return false;
+			}
 
 			this.model.set({
 				email: this.$el.find('input[name="email"]').val(),

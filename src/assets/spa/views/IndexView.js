@@ -3,9 +3,7 @@ var app = app || {};
 (function($) {
 	'use strict';
 	
-	app.IndexView = Backbone.View.extend({
-		el: '#app',
-		
+	app.IndexView = Backbone.View.extend({		
 		template: JST.Welcome,
 		
 		initialize: function() {					

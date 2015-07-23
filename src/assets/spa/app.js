@@ -12,21 +12,32 @@ $(function() {
 			"results": "resultsView",
 			"*notFound": "indexView"
 		},
+		
+		appElement: $('#app'),
+		
+		currentView: false,
+		showView: function(view) {
+			this.currentView = view;
+			this.appElement.html(this.currentView.render().el);
+		},
 
 		indexView: function() {			
-			new app.IndexView();
+			app.indexView = new app.IndexView();
+			this.showView(app.indexView);
 		},
 		
 		resultsView: function() {
-			new app.ResultsView();
+			app.resultsView = new app.ResultsView();
+			this.showView(app.resultsView);
 		},
 		
-		voteView: function() {				
-			new app.VoteView();
+		voteView: function() {
+			app.voteView = new app.VoteView();	
+			this.showView(app.voteView);
 		}
 	});
 	
-	app.Router = new Router();
+	app.router = new Router();
 	
 	Backbone.history.start();
 	

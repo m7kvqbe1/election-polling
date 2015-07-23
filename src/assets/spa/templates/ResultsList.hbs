@@ -18,7 +18,7 @@
 			<!-- Filter results by constituency -->
 			<label for="filter-constituency">Filter:&nbsp;</label>
 			<select id="filter-constituency">
-				<option value="" selected disabled>Select a constituency</option>
+				<option value="showall" selected>Show All</option>
 				{{#if models}}
 				{{#each models}}
 				<option value="{{attributes.constituency_id}}">{{attributes.constituency}}</option>
