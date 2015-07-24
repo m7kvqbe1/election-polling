@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 			}
 		},
 		
-        uglify: {
+		uglify: {
 			options: {
 				banner: '/* <%= pkg.name %>, built <%=  grunt.template.today() %> */\n',
 				compress: true,
@@ -77,7 +77,12 @@ module.exports = function(grunt) {
 			}
 		},
 		
-		watch: {			
+		watch: {
+			sass: {
+				files: ['./src/assets/sass/*.scss'],
+				tasks: ['sass']
+			},	
+			
 			js: {
 				files: [
 					'./src/assets/spa/**/*.js', 
