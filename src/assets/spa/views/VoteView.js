@@ -81,14 +81,14 @@ var app = app || {};
 			this.model.save(null, {
 				success: function(model, response) {					
 					// Display success / thank you message and disable form
-					$('#app').find('button[type=submit]').prop('disabled', true);
-					$('#app').find('form .notice').html('Thank you your vote has been counted!');
+					app.Element.find('button[type=submit]').prop('disabled', true);
+					app.Element.find('form .notice').html('Thank you your vote has been counted!');
 				},
 
 				error: function(model, response) {		            
 					// Display clean error response from API
 					var apiResponse = JSON.parse(response.responseText);		            
-					$('#app').find('form .notice').html(apiResponse.message);
+					app.Element.find('form .notice').html(apiResponse.message);
 				}
 			});
 		}

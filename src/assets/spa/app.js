@@ -3,6 +3,8 @@ var app = app || {};
 $(function() {
 	'use strict';
 	
+	app.Element = $('#app');
+	
 	var Router = Backbone.Router.extend({
 		root: '/',
 		
@@ -13,12 +15,8 @@ $(function() {
 			"*notFound": "indexView"
 		},
 		
-		appElement: $('#app'),
-		
-		currentView: false,
 		showView: function(view) {
-			this.currentView = view;
-			this.appElement.html(this.currentView.render().el);
+			app.Element.html(view.render().el);
 		},
 
 		indexView: function() {			

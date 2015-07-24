@@ -31,7 +31,7 @@ this["JST"]["ResultsList"] = Handlebars.template({"1":function(depth0,helpers,pa
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
     var stack1;
 
-  return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#results\">Results</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">\n	<hr />\n	\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n	\n	<hr />\n	\n	<div class=\"clearfix\"></div>\n	\n	<div class=\"container-fluid\">		\n		<div class=\"pull-right text-right\">\n			<!-- Filter results by constituency -->\n			<label for=\"filter-constituency\">Filter:&nbsp;</label>\n			<select id=\"filter-constituency\">\n				<option value=\"showall\" selected>Show All</option>\n"
+  return "<ol class=\"breadcrumb\">\n	<li><a href=\"/#\">Kineo Technical Task</a></li>\n	<li><a href=\"/#results\">Results</a></li>\n	<li class=\"active\">Index</li>\n</ol>\n\n<div class=\"welcome\">\n	<hr />\n	\n	<p>Scelerisque vestibulum adipiscing fusce metus bibendum neque parturient sodales sem phasellus sed parturient sociis a aenean accumsan molestie a sociis non aliquam egestas. A tincidunt a nullam risus orci varius nullam vitae scelerisque a quam suspendisse a euismod consectetur duis senectus a a parturient et scelerisque parturient parturient parturient convallis. Massa tortor suspendisse fringilla a senectus placerat a mus et vestibulum velit a phasellus consectetur hac est eu.</p>\n	\n	<hr />\n	\n	<div class=\"clearfix\"></div>\n	\n	<div class=\"container-fluid\">		\n		<div class=\"pull-right text-right\">\n			<!-- Filter results by constituency -->\n			<label for=\"filter-constituency\">Filter constituency:&nbsp;</label>\n			<select id=\"filter-constituency\">\n				<option value=\"showall\" selected>Show All</option>\n"
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.models : depth0),{"name":"if","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
     + "			</select>\n		</div>\n		\n		<table class=\"table table-hover\">\n			<thead>\n				<tr>\n					<th>Candidate Name</th>\n					<th>Party</th>\n					<th>Constituency</th>\n					<th>Vote Count</th>\n				</tr>\n			</thead>\n			<tbody>\n				<!-- Results -->\n"
     + ((stack1 = helpers['if'].call(depth0,(depth0 != null ? depth0.models : depth0),{"name":"if","hash":{},"fn":this.program(4, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
@@ -89,6 +89,7 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 		var re = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 		var form = $(form);
 		var inputs = form.find('.required');
+		
 		inputs.each(function(){
 			var input = $(this);
 			if(input.val() == ''){
@@ -318,14 +319,14 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 			this.model.save(null, {
 				success: function(model, response) {					
 					// Display success / thank you message and disable form
-					$('#app').find('button[type=submit]').prop('disabled', true);
-					$('#app').find('form .notice').html('Thank you your vote has been counted!');
+					app.Element.find('button[type=submit]').prop('disabled', true);
+					app.Element.find('form .notice').html('Thank you your vote has been counted!');
 				},
 
 				error: function(model, response) {		            
 					// Display clean error response from API
 					var apiResponse = JSON.parse(response.responseText);		            
-					$('#app').find('form .notice').html(apiResponse.message);
+					app.Element.find('form .notice').html(apiResponse.message);
 				}
 			});
 		}
@@ -334,6 +335,8 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 
 $(function() {
 	'use strict';
+	
+	app.Element = $('#app');
 	
 	var Router = Backbone.Router.extend({
 		root: '/',
@@ -345,12 +348,8 @@ $(function() {
 			"*notFound": "indexView"
 		},
 		
-		appElement: $('#app'),
-		
-		currentView: false,
 		showView: function(view) {
-			this.currentView = view;
-			this.appElement.html(this.currentView.render().el);
+			app.Element.html(view.render().el);
 		},
 
 		indexView: function() {			

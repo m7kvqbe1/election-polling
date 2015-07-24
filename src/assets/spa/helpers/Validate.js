@@ -4,6 +4,7 @@ var Validate = {
 		var re = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 		var form = $(form);
 		var inputs = form.find('.required');
+		
 		inputs.each(function(){
 			var input = $(this);
 			if(input.val() == ''){
