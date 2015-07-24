@@ -24,7 +24,7 @@ class ResultsModel extends BaseModel
 			LEFT JOIN tblConstituencies AS c
 			ON a.constituency_id = c.id
 			GROUP BY b.candidate_id
-			ORDER BY count DESC"
+			ORDER BY count DESC, constituency ASC"
 		);
 		
 		$result = $stmt->fetchAll(\PDO::FETCH_ASSOC);
