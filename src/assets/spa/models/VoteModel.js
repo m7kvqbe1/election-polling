@@ -7,7 +7,7 @@ var app = app || {};
 		url: '/api/vote',
 		
 		defaults: {
-			vote: false
+			voting: false
 		},
 		
 		constituencyOptions: [],

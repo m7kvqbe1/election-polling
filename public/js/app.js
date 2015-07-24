@@ -149,7 +149,7 @@ this["JST"]["Welcome"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"
 		url: '/api/vote',
 		
 		defaults: {
-			vote: false
+			voting: false
 		},
 		
 		constituencyOptions: [],
