@@ -9,6 +9,8 @@ The application has been built using the following key technologies:
 - PHP 5.6
 - Silex (see composer.json for list of additional packages)
 - Backbone.js
+- Handlebars.js
+- Underscore.js
 - jQuery
 - mySQL
 - Grunt (for SPA build)
