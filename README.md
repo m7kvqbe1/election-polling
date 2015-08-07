@@ -35,9 +35,7 @@ Please find included in the archive of this repository a SQL dump of the mySQL d
 
 ## General Notes
 
-I've spent about 10 hours on this. I was keen to get this code over to you today so that you have time to review before the weekend. I'm unfortunately away on holiday from next Tuesday evening.
-
-Although some unit testing has been done and the API is complete I have been bad and skipped out functional testing of the API which I would usually perform using the Symfony WebTestCase class to test all the endpoints: 
+Although some unit testing has been done and the API is complete I have been bad and skipped out functional testing of the API which would usually be performed using the Symfony WebTestCase class to test all the endpoints: 
 http://symfony.com/doc/current/book/testing.html#functional-tests
 
 The following feature has not yet been fully implemented due to time constraints:
@@ -51,7 +49,7 @@ Things to note about the voting feature:
 
 ## With more time
 
-- If I had more time I would have added DocBlocks as I developed to the API code and really regret not doign this.
+- I would have added DocBlocks as I developed to the API code.
 
 - It would have much much higher test coverage.
 
