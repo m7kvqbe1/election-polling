@@ -1,6 +1,6 @@
-# Kineo Technical Task
+# General Election Polling Application
 
-Welcome to the Kineo Technical Task documentation. This is a single page application served by a database driven RESTful API.
+Welcome to the General Election Polling Application documentation. This is a single page application served by a database driven RESTful API.
 
 ## Summary of Technologies Used
 
@@ -48,8 +48,6 @@ Things to note about the voting feature:
 - Feedback from API (e.g. with problem committing to database / if a user voted). 
 - Dynamically populates potential candidates based on constituency selected.
 - Client side validation
-
-Really sorry it's tabs and not 4 spaces!!
 
 ## With more time
 
