@@ -14,7 +14,7 @@ class BaseModel implements ModelInterface
 			throw new \Exception('No records found');
 		} else {
 			foreach($records as $item) {
-				// Must be fully qualified namespace
+				// Requires a fully qualified namespace
 				$doc = new $modelType($this->app);
 				
 				foreach($item as $key => $val) {
