@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 				},
 				
 				files: {
-					'./public/css/styles.css': './src/assets/sass/styles.scss'
+					'./public/css/styles.css': './application/assets/sass/styles.scss'
 				}	
 			},
 		},
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 			
 			app: {
 				files: {
-					'./src/assets/spa/templates/compiled.js': './src/assets/spa/templates/*.hbs'
+					'./application/assets/spa/templates/compiled.js': './application/assets/spa/templates/*.hbs'
 				}
 			}
 		},
@@ -39,12 +39,12 @@ module.exports = function(grunt) {
 
 			app: {
 				src: [
-					'./src/assets/spa/templates/compiled.js',
-					'./src/assets/spa/helpers/*.js',
-					'./src/assets/spa/collections/*.js',
-					'./src/assets/spa/models/*.js',
-					'./src/assets/spa/views/*.js',
-					'./src/assets/spa/app.js'
+					'./application/assets/spa/templates/compiled.js',
+					'./application/assets/spa/helpers/*.js',
+					'./application/assets/spa/collections/*.js',
+					'./application/assets/spa/models/*.js',
+					'./application/assets/spa/views/*.js',
+					'./application/assets/spa/app.js'
 				],
 
 				dest: './public/js/app.js'
@@ -61,10 +61,10 @@ module.exports = function(grunt) {
 			
 			lib: {
 				src: [
-					'./src/assets/spa/lib/jquery-1.11.3.js',
-					'./src/assets/spa/lib/underscore.js',
-					'./src/assets/spa/lib/backbone.js',
-					'./src/assets/spa/lib/handlebars.runtime-v3.0.3.js'
+					'./application/assets/spa/lib/jquery-1.11.3.js',
+					'./application/assets/spa/lib/underscore.js',
+					'./application/assets/spa/lib/backbone.js',
+					'./application/assets/spa/lib/handlebars.runtime-v3.0.3.js'
 				],
 
 				dest: './public/js/lib.min.js'
@@ -79,15 +79,15 @@ module.exports = function(grunt) {
 		
 		watch: {
 			sass: {
-				files: ['./src/assets/sass/*.scss'],
+				files: ['./application/assets/sass/*.scss'],
 				tasks: ['sass']
 			},	
 			
 			js: {
 				files: [
-					'./src/assets/spa/**/*.js', 
-					'./src/assets/spa/*.js', 
-					'./src/assets/spa/templates/*.hbs'
+					'./application/assets/spa/**/*.js', 
+					'./application/assets/spa/*.js', 
+					'./application/assets/spa/templates/*.hbs'
 				],
 				
 				tasks: ['handlebars', 'concat', 'uglify']
