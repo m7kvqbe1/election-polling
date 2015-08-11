@@ -1,5 +1,7 @@
 # General Election Polling Application
 
+[![Build Status](https://travis-ci.org/tomeightyeight/general-election-polling.svg?branch=master)](https://travis-ci.org/tomeightyeight/general-election-polling)
+
 Welcome to the General Election Polling Application documentation. This is a single page application served by a database driven RESTful API.
 
 ## Summary of Technologies Used
