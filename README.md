@@ -49,7 +49,7 @@ Things to note about the voting feature:
 - Dynamically populates potential candidates based on constituency selected.
 - Client side validation
 
-## With more time
+## Still To Do
 
 - I would have added DocBlocks as I developed to the API code.
 
@@ -58,3 +58,6 @@ Things to note about the voting feature:
 - I'd be much more careful about filtering input server side.
 
 - The SPA would also have a few niggles resolved like using pushstate instead of the #
+
+## Copyright and Licence
+This application has been written by Tom Humphris and is released under the MIT License.
