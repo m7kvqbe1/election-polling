@@ -41,7 +41,7 @@ $app->register(new ServiceControllerServiceProvider());
 
 // Register Monolog service provider for local logging
 $app->register(new MonologServiceProvider(), array(
-    'monolog.logfile' => DOCUMENT_ROOT.LOG_PATH,
+    'monolog.logfile' => __DIR__.LOG_PATH,
 	'monolog.name' => APP_NAME,
 	'monolog.level' => LOG_LEVEL
 ));
@@ -64,6 +64,6 @@ $app->error(function(\Exception $e, $code) use ($app) {
 });
 
 // Load routes
-foreach(glob(DOCUMENT_ROOT . "/src/Kineo/Route/*.php") as $filename) {
+foreach(glob(__DIR__ . "/Kineo/Route/*.php") as $filename) {
     require_once $filename;
 }
