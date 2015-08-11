@@ -64,6 +64,6 @@ $app->error(function(\Exception $e, $code) use ($app) {
 });
 
 // Load routes
-foreach(glob(__DIR__ . "/Kineo/Route/*.php") as $filename) {
+foreach(glob(__DIR__ . "/src/Kineo/Route/*.php") as $filename) {
     require_once $filename;
 }
