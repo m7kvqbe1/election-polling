@@ -1,2 +1,2 @@
 <?php
-require $_SERVER['APP_DIR'] . '/src/app.php';
+require $_SERVER['APP_DIR'] . '/application/app.php';

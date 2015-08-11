@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
-<phpunit bootstrap="./src/Kineo/Test/bootstrap.php"
+<phpunit bootstrap="./application/tests/bootstrap.php"
 	convertWarningsToExceptions="true"
 	convertNoticesToExceptions="true"
 	convertErrorsToExceptions="true"
@@ -13,7 +13,7 @@
 		
     <testsuites>
         <testsuite name="Kineo Technical Task - Default Test Suite">
-            <directory>./src/Kineo/Test/</directory>
+            <directory>./application/tests/</directory>
         </testsuite>
     </testsuites>
     
