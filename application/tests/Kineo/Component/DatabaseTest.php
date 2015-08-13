@@ -10,7 +10,7 @@ class DatabaseTest extends \PHPUnit_Framework_TestCase
 	{
 		$database = new Database();
 		
-		$this->assertInstanceOf('\PDO', $database->connection);
+		$this->assertInstanceOf('\PDO', $database);
 	}
 	
 	public function testBindParamArray()
