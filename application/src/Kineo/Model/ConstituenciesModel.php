@@ -16,7 +16,7 @@ class ConstituenciesModel extends BaseModel
 	
 	public function getAllConstituencies() 
 	{
-		$stmt = $this->db->connection->query(
+		$stmt = $this->db->query(
 			"SELECT * FROM `tblConstituencies` ORDER BY `name` ASC"
 		);
 		

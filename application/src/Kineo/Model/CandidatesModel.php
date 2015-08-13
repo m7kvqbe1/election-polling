@@ -16,7 +16,7 @@ class CandidatesModel extends BaseModel
 	
 	public function getCandidatesByConstituencyId($constituencyId) 
 	{
-		$stmt = $this->db->connection->prepare(
+		$stmt = $this->db->prepare(
 			"SELECT a.id, a.name, a.party FROM `tblCandidates` AS a 
 			LEFT JOIN `tblConstituencies` AS b 
 			ON a.constituency_id = b.id 

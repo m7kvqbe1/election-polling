@@ -1,15 +1,14 @@
 <?php
 namespace Kineo\Component;
 
-class Database
-{
-	public $connection;
-	
-	public function __construct() 
+class Database extends \PDO
+{	
+	public function __construct($emulatePrepares = false) 
 	{
-		$this->connection = new \PDO('mysql:host='.MYSQL_HOST.';dbname='.MYSQL_DATABASE.';charset=utf8', MYSQL_USER, MYSQL_PASSWORD);
-		$this->connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-		$this->connection->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
+		parent::__construct('mysql:host=' . MYSQL_HOST . ';dbname=' . MYSQL_DATABASE . ';charset=utf8', MYSQL_USER, MYSQL_PASSWORD);
+		
+		$this->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+		$this->setAttribute(\PDO::ATTR_EMULATE_PREPARES, $emulatePrepares);
 	}
 	
 	public static function bindParamArray($prefix, $values, &$bindArray)

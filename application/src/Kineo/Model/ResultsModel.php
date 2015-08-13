@@ -16,7 +16,7 @@ class ResultsModel extends BaseModel
 	
 	public function getResults() 
 	{
-		$stmt = $this->db->connection->query(
+		$stmt = $this->db->query(
 			"SELECT a.name, a.party, a.constituency_id, c.name AS constituency, COUNT(*) AS count 
 			FROM tblCandidates AS a
 			INNER JOIN tblVotes AS b

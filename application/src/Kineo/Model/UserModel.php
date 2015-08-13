@@ -30,7 +30,7 @@ class UserModel extends BaseModel
 	
 	public function loadUserByEmail($email)
 	{
-		$stmt = $this->db->connection->prepare(
+		$stmt = $this->db->prepare(
 			'SELECT * FROM `tblUsers` AS a 
 			LEFT JOIN `tblConstituencies` AS b 
 			ON a.constituency_id = b.id
@@ -58,10 +58,10 @@ class UserModel extends BaseModel
 	public function saveUser($email, $firstName, $surname, $constituencyId, $voting = false, $candidateId = null)
 	{		
 		try {
-			$this->db->connection->beginTransaction();
+			$this->db->beginTransaction();
 			
 			// Statement 1 - Save user
-			$stmt = $this->db->connection->prepare(
+			$stmt = $this->db->prepare(
 				'INSERT INTO `tblUsers` (email, first_name, surname, constituency_id, voting)
 				VALUES (:email, :first_name, :surname, :constituency_id, :voting)'
 			);
@@ -74,14 +74,14 @@ class UserModel extends BaseModel
 			$stmt->execute();
 			
 			if(!$voting) {
-				$this->db->connection->commit();
+				$this->db->commit();
 				return;
 			}
 			
-			$userId = $this->db->connection->lastInsertId();
+			$userId = $this->db->lastInsertId();
 			
 			// Statement 2 - Save voting intention
-			$stmt2 = $this->db->connection->prepare(
+			$stmt2 = $this->db->prepare(
 				'INSERT INTO `tblVotes` (user_id, candidate_id)
 				VALUES (:user_id, :candidate_id)'
 			);
@@ -90,11 +90,11 @@ class UserModel extends BaseModel
 			$stmt2->bindValue(':candidate_id', $candidateId, \PDO::PARAM_INT);
 			$stmt2->execute();
 			
-			$this->db->connection->commit();
+			$this->db->commit();
 			
 			return $userId;
 		} catch(\PDOException $e) {
-			$this->db->connection->rollback();
+			$this->db->rollback();
 			
 			throw new \Exception('There was a problem saving this user: ' . $e->getMessage());
 		}
