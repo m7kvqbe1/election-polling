@@ -2,3 +2,4 @@ phpunit.xml
 /log
 /node_modules
 /vendor
+.phpintel
