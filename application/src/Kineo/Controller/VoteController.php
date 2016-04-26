@@ -9,14 +9,7 @@ use Kineo\Component\ApiResponse;
 use Kineo\Model\UserModel;
 
 class VoteController
-{
-	protected $app;
-	
-	public function __construct(Application $app) 
-	{
-		$this->app = $app;
-	}
-	
+{	
 	public function castVoteAction() 
 	{
 		$userData = json_decode(file_get_contents('php://input'));

@@ -10,14 +10,7 @@ use Kineo\Model\ConstituenciesModel;
 use Kineo\Model\CandidatesModel;
 
 class DataController
-{
-	protected $app;
-	
-	public function __construct(Application $app) 
-	{
-		$this->app = $app;
-	}
-	
+{	
 	public function fetchConstituenciesAction()
 	{		
 		$constituenciesModel = new ConstituenciesModel(new Database());

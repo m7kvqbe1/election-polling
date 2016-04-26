@@ -9,14 +9,7 @@ use Kineo\Component\ApiResponse;
 use Kineo\Model\ResultsModel;
 
 class ResultsController 
-{
-	protected $app;
-	
-	public function __construct(Application $app) 
-	{
-		$this->app = $app;
-	}
-	
+{	
 	public function fetchResultsAction()
 	{		
 		$resultsModel = new ResultsModel(new Database());
