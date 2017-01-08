@@ -61,10 +61,10 @@ module.exports = function(grunt) {
 			
 			lib: {
 				src: [
-					'./application/assets/spa/lib/jquery-1.11.3.js',
-					'./application/assets/spa/lib/underscore.js',
-					'./application/assets/spa/lib/backbone.js',
-					'./application/assets/spa/lib/handlebars.runtime-v3.0.3.js'
+					'./node_modules/jquery/dist/jquery.js',
+					'./node_modules/underscore/underscore.js',
+					'./node_modules/backbone/backbone.js',
+					'./node_modules/handlebars/dist/handlebars.runtime.js'
 				],
 
 				dest: './public/js/lib.min.js'
