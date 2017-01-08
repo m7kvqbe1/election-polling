@@ -29,7 +29,7 @@ Please find included in the archive of this repository a SQL dump of the mySQL d
 
 1. Please install the relevant project dependencies via Composer (composer install - composer.json included).
 
-2. The latest build of the SPA JavaScript and CSS is included in the ./public directory. You can re-build this by installing Grunt (npm install - package.json included).
+2. Build SPA JavaScript bundles and CSS by installing and running Grunt (npm install - package.json included).
 
 3. Ensure that the following file exists and is writable: ./log/error.log (this is not included in the repositoy due to the .gitignore).
 
