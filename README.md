@@ -1,6 +1,6 @@
 # General Election Polling Application
 
-[![Build Status](https://travis-ci.org/tomeightyeight/general-election-polling.svg?branch=master)](https://travis-ci.org/tomeightyeight/general-election-polling) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/tomeightyeight/general-election-polling/badges/quality-score.png)](https://scrutinizer-ci.com/g/tomeightyeight/general-election-polling/)
+[![Build Status](https://travis-ci.org/tomeightyeight/election-polling.svg?branch=master)](https://travis-ci.org/tomeightyeight/general-election-polling) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/tomeightyeight/general-election-polling/badges/quality-score.png)](https://scrutinizer-ci.com/g/tomeightyeight/general-election-polling/)
 
 Welcome to the General Election Polling Application documentation. This is a single page application served by a database driven RESTful API.
 
@@ -37,7 +37,7 @@ Please find included in the archive of this repository a SQL dump of the mySQL d
 
 ## General Notes
 
-Although some unit testing has been done and the API is complete I have been bad and skipped out functional testing of the API which would usually be performed using the Symfony WebTestCase class to test all the endpoints: 
+Although some unit testing has been done and the API is complete I've skipped out functional testing of the API which would usually be performed using the Symfony WebTestCase class to test all the endpoints: 
 http://symfony.com/doc/current/book/testing.html#functional-tests
 
 The following feature has not yet been fully implemented due to time constraints:
@@ -48,16 +48,6 @@ Things to note about the voting feature:
 - Feedback from API (e.g. with problem committing to database / if a user voted). 
 - Dynamically populates potential candidates based on constituency selected.
 - Client side validation
-
-## Still To Do
-
-- I would have added DocBlocks as I developed to the API code.
-
-- It would have much much higher test coverage.
-
-- I'd be much more careful about filtering input server side.
-
-- The SPA would also have a few niggles resolved like using pushstate instead of the #
 
 ## Copyright and Licence
 This application has been written by Tom Humphris and is released under the MIT License.
