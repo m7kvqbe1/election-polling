@@ -3,3 +3,4 @@ phpunit.xml
 /node_modules
 /vendor
 .phpintel
+.DS_Store
